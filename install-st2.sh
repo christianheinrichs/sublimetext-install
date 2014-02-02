@@ -20,7 +20,7 @@
 #                                                                         #
 ###########################################################################
 
-# inst-st2.sh written by netcyphe - 02/02/2014
+# install-st2.sh written by netcyphe - 02/02/2014
 
 # This script is based on the Sublime Text 2 documentation at:
 # http://sublime-text-unofficial-documentation.readthedocs.org/en/sublime-text-2/getting_started/install.html
