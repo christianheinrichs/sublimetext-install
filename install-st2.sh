@@ -20,6 +20,8 @@
 #                                                                         #
 ###########################################################################
 
+# Disclaimer: I cannot be held responsible for any system damage or data loss. Use this script at your own risk!
+
 # install-st2.sh written by netcyphe - 02/02/2014
 
 # This script is based on the Sublime Text 2 documentation at:
