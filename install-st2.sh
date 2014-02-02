@@ -20,6 +20,8 @@
 #                                                                         #
 ###########################################################################
 
+# Disclaimer: I cannot be held responsible for any system damage or data loss. Use this script at your own risk!
+
 # install-st2.sh written by netcyphe - 02/02/2014
 
 # This script is based on the Sublime Text 2 documentation at:
@@ -44,7 +46,7 @@ if [[ $installdecision == "i" || $installdecision == "I" ]]
                 # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
                 printf "Creating Sublime Text 2 symlink\n"
                 sudo ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
-                printf "Cat'ing content...\n"
+                printf "Writing sublime.desktop file\n"
                 sudo cat <<EOF> /usr/share/applications/sublime.desktop
 [Desktop Entry]
 Version=2.0.2
@@ -77,7 +79,7 @@ EOF
                 # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
                 printf "Creating Sublime Text 2 symlink\n"
                 sudo ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
-                printf "Cat'ing content...\n"
+                printf "Writing sublime.desktop file\n"
                 sudo cat <<EOF> /usr/share/applications/sublime.desktop
 [Desktop Entry]
 Version=2.0.2
