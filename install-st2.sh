@@ -2,7 +2,7 @@
 
 ###########################################################################
 #                                                                         #
-#  install-st2.sh - Install/uninstall Sublime Text 2 on Debian systems    #
+#  install-st2.sh - Install/uninstall Sublime Text 2 on Linux             #
 #  Copyright (C) 2014 netcyphe <netcyphe@openmailbox.org>                 #
 #                                                                         #
 #  This program is free software: you can redistribute it and/or modify   #
@@ -22,11 +22,12 @@
 
 # Disclaimer: I cannot be held responsible for any system damage or data loss. Use this script at your own risk!
 
-# install-st2.sh written by netcyphe - 02/02/2014
+# install-st2.sh written by netcyphe - 02/05/2014
 
 # This script is based on the Sublime Text 2 documentation at:
 # http://sublime-text-unofficial-documentation.readthedocs.org/en/sublime-text-2/getting_started/install.html
-# I know there are many other similar scripts on Gists, but feel free to choose any of them.
+# I know there are many other similar scripts on Gists, but feel free to choose any script you like for installing Sublime Text 2.
+# install-st2.sh has been tested on Arch Linux 64-bit, Lubuntu 13.04 32-bit and Ubuntu 12.04 64-bit
 
 read -p "Do you want to [i]nstall or [u]ninstall Sublime Text 2? " installdecision
 
@@ -110,15 +111,12 @@ EOF
         fi
 elif [[ $installdecision == "u" || $installdecision == "U" ]]
     then
-        # Delete the folder /opt/Sublime Text 2
+        # Delete the folder /opt/Sublime Text 2/
         printf "Deleting Sublime Text 2 folder\n"
-        sudo rm -r /opt/Sublime\ Text\ 2
-        # First unlink /usr/bin/sublime
+        sudo rm -rf /opt/Sublime\ Text\ 2/
+        # Unlink /usr/bin/sublime
         printf "Removing Sublime Text 2 symlink\n"
         sudo unlink /usr/bin/sublime
-        # Then delete it completely
-        printf "Removing Sublime Text 2 symlink completely\n"
-        sudo rm /usr/bin/sublime
         # Remove the .desktop file from the Unity menu
         printf "Deleting Sublime Text 2 menu association\n"
         sudo rm /usr/share/applications/sublime.desktop
