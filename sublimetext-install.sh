@@ -2,7 +2,7 @@
 
 ###########################################################################
 #                                                                         #
-#  sublimetext-install.sh - Install/uninstall Sublime Text 2 on Linux     #
+#  sublimetext-install.sh - Install/uninstall Sublime Text on Linux       #
 #  Copyright (C) 2014 netcyphe <netcyphe@openmailbox.org>                 #
 #                                                                         #
 #  This program is free software: you can redistribute it and/or modify   #
@@ -162,10 +162,10 @@ elif [[ $versiondecision == "st3" || $versiondecision == "ST3" ]]
                         tar vxjf sublime_text_3_build_3059_x32.tar.bz2
                         # Move the extracted folder to /opt/
                         printf "Moving Sublime Text 3 folder to /opt/\n"
-                        sudo mv Sublime\ Text\ 3 /opt/
+                        sudo mv sublime_text_3 /opt/
                         # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
                         printf "Creating Sublime Text 3 symlink\n"
-                        sudo ln -s /opt/Sublime\ Text\ 3/sublime_text /usr/bin/sublime
+                        sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime
                         printf "Writing sublime.desktop file\n"
                         # Thanks to grawity for solving the sudo cat redirection problem here:
                         # http://superuser.com/questions/340074/bash-permission-denied-issue-when-trying-to-append-to-eof/340083#340083
@@ -179,7 +179,7 @@ GenericName=Text Editor
 
 Exec=sublime
 Terminal=false
-Icon=/opt/Sublime Text 3/Icon/48x48/sublime_text.png
+Icon=/opt/sublime_text_3/Icon/48x48/sublime_text.png
 Type=Application
 Categories=TextEditor;IDE;Development
 X-Ayatana-Desktop-Shortcuts=NewWindow
@@ -198,10 +198,10 @@ EOF
                         tar vxjf sublime_text_3_build_3059_x64.tar.bz2
                         # Move the extracted folder to /opt/
                         printf "Moving Sublime Text 3 folder to /opt/\n"
-                        sudo mv Sublime\ Text\ 3 /opt/
+                        sudo mv sublime_text_3 /opt/
                         # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
                         printf "Creating Sublime Text 3 symlink\n"
-                        sudo ln -s /opt/Sublime\ Text\ 3/sublime_text /usr/bin/sublime
+                        sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime
                         printf "Writing sublime.desktop file\n"
                         # Thanks to grawity for solving the sudo cat redirection problem here:
                         # http://superuser.com/questions/340074/bash-permission-denied-issue-when-trying-to-append-to-eof/340083#340083
@@ -215,7 +215,7 @@ GenericName=Text Editor
 
 Exec=sublime
 Terminal=false
-Icon=/opt/Sublime Text 3/Icon/48x48/sublime_text.png
+Icon=/opt/sublime_text_3/Icon/48x48/sublime_text.png
 Type=Application
 Categories=TextEditor;IDE;Development
 X-Ayatana-Desktop-Shortcuts=NewWindow
@@ -233,7 +233,7 @@ EOF
             then
                 # Delete the folder /opt/Sublime Text 3/
                 printf "Deleting Sublime Text 3 folder\n"
-                sudo rm -rf /opt/Sublime\ Text\ 3/
+                sudo rm -rf /opt/sublime_text_3
                 # Unlink /usr/bin/sublime
                 printf "Removing Sublime Text 3 symlink\n"
                 sudo unlink /usr/bin/sublime
