@@ -1,28 +1,28 @@
 #!/bin/bash
 
-###########################################################################
-#                                                                         #
-#  sublimetext-install.sh - Install/uninstall Sublime Text on Linux       #
-#  Copyright (C) 2014 netcyphe <netcyphe@openmailbox.org>                 #
-#                                                                         #
-#  This program is free software: you can redistribute it and/or modify   #
-#  it under the terms of the GNU General Public License as published by   #
-#  the Free Software Foundation, either version 3 of the License, or      #
-#  (at your option) any later version.                                    #
-#                                                                         #
-#  This program is distributed in the hope that it will be useful,        #
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of         #
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the          #
-#  GNU General Public License for more details.                           #
-#                                                                         #
-#  You should have received a copy of the GNU General Public License      #
-#  along with this program.  If not, see <http://www.gnu.org/licenses/>.  #
-#                                                                         #
-###########################################################################
+##################################################################################
+#                                                                                #
+#  sublimetext-install.sh - Install/uninstall Sublime Text on Linux              #
+#  Copyright (C) 2014 Christian Heinrichs <christian.heinrichs@openmailbox.org>  #
+#                                                                                #
+#  This program is free software: you can redistribute it and/or modify          #
+#  it under the terms of the GNU General Public License as published by          #
+#  the Free Software Foundation, either version 3 of the License, or             #
+#  (at your option) any later version.                                           #
+#                                                                                #
+#  This program is distributed in the hope that it will be useful,               #
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of                #
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                 #
+#  GNU General Public License for more details.                                  #
+#                                                                                #
+#  You should have received a copy of the GNU General Public License             #
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.         #
+#                                                                                #
+##################################################################################
 
 # Disclaimer: I cannot be held responsible for any system damage or data loss. Use this script at your own risk!
 
-# sublimetext-install.sh written by netcyphe <netcyphe@openmailbox.org> - 03/18/2014
+# sublimetext-install.sh written by Christian Heinrichs <christian.heinrichs@openmailbox.org> - 05/10/2014
 
 # This script is based on the Sublime Text 2 documentation at:
 # http://sublime-text-unofficial-documentation.readthedocs.org/en/sublime-text-2/getting_started/install.html
@@ -46,6 +46,7 @@ if [[ $versiondecision == "st2" || $versiondecision == "ST2" ]]
 
                 if [ $archdecision == "i386" ]
                     then
+                        # Download the .tar archive
                         printf "Downloading Sublime Text 2 for i386 system.\n"
                         wget http://c758482.r82.cf2.rackcdn.com/Sublime\ Text\ 2.0.2.tar.bz2
                         # Extract the .tar archive
@@ -56,6 +57,7 @@ if [[ $versiondecision == "st2" || $versiondecision == "ST2" ]]
                         # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
                         printf "Creating Sublime Text 2 symlink\n"
                         sudo ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
+                        # Write the sublime.desktop configuration file
                         printf "Writing sublime.desktop file\n"
                         # Thanks to grawity for solving the sudo cat redirection problem here:
                         # http://superuser.com/questions/340074/bash-permission-denied-issue-when-trying-to-append-to-eof/340083#340083
@@ -81,6 +83,7 @@ TargetEnvironment=Unity
 EOF
                 elif [ $archdecision == "x64" ]
                     then
+                        # Download the .tar archive
                         printf "Downloading Sublime Text 2 for x64 system.\n"
                         wget http://c758482.r82.cf2.rackcdn.com/Sublime\ Text\ 2.0.2\ x64.tar.bz2
                         # Extract the .tar archive
@@ -91,6 +94,7 @@ EOF
                         # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
                         printf "Creating Sublime Text 2 symlink\n"
                         sudo ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
+                        # Write the sublime.desktop configuration file
                         printf "Writing sublime.desktop file\n"
                         # Thanks to grawity for solving the sudo cat redirection problem here:
                         # http://superuser.com/questions/340074/bash-permission-denied-issue-when-trying-to-append-to-eof/340083#340083
@@ -155,6 +159,7 @@ elif [[ $versiondecision == "st3" || $versiondecision == "ST3" ]]
 
                 if [ $archdecision == "i386" ]
                     then
+                        # Download the .tar archive
                         printf "Downloading Sublime Text 3 for i386 system.\n"
                         wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3059_x32.tar.bz2
                         # Extract the .tar archive
@@ -166,6 +171,7 @@ elif [[ $versiondecision == "st3" || $versiondecision == "ST3" ]]
                         # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
                         printf "Creating Sublime Text 3 symlink\n"
                         sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime
+                        # Write the sublime.desktop configuration file
                         printf "Writing sublime.desktop file\n"
                         # Thanks to grawity for solving the sudo cat redirection problem here:
                         # http://superuser.com/questions/340074/bash-permission-denied-issue-when-trying-to-append-to-eof/340083#340083
@@ -191,6 +197,7 @@ TargetEnvironment=Unity
 EOF
                 elif [ $archdecision == "x64" ]
                     then
+                        # Download the .tar archive
                         printf "Downloading Sublime Text 3 for x64 system.\n"
                         wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3059_x64.tar.bz2
                         # Extract the .tar archive
@@ -202,6 +209,7 @@ EOF
                         # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
                         printf "Creating Sublime Text 3 symlink\n"
                         sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime
+                        # Write the sublime.desktop configuration file
                         printf "Writing sublime.desktop file\n"
                         # Thanks to grawity for solving the sudo cat redirection problem here:
                         # http://superuser.com/questions/340074/bash-permission-denied-issue-when-trying-to-append-to-eof/340083#340083
