@@ -1,0 +1,48 @@
+Version 2.2.2014-r1
+- Release
+
+Version 2.2.2014-r2
+- Rename inst-st2.sh to install-st2.sh in comment section
+
+Version 2.2.2014-r3
+- Add disclaimer
+- Correct printf message
+
+Version 2.2.2014-r4
+- Add reference for sudo cat redirection problem
+
+Version 2.2.2014-r5
+- Re-add disclaimer comment
+
+Version 5.2.2014
+- Correct description
+- Remove unnecessary deletion of symbolic link
+
+Version 18.3.2014-r1
+- Add Sublime Text 3 installation/uninstallation dialog
+- Rename install-st2.sh to sublimetext-install.sh
+- Fix typos
+
+Version 18.3.2014-r2
+- Rename ‘Sublime Text 3’ folder to sublime_text_3
+
+Version 10.5.2014
+- Update GNU license notice
+- Add comments
+
+Version 17.7.2019-r1
+- Update email address
+- Update download links
+- Bump version in sublime.desktop file to 3.2.1
+- Update tar syntax
+- Sort rm arguments alphabetically
+- Add .gitignore
+
+Version 17.7.2019-r2
+- Delete .gitignore
+
+Version 14.1.2022
+- Add changelog
+- Add license
+- Add readme files
+- Update comments

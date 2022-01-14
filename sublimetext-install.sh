@@ -23,10 +23,12 @@
 # Disclaimer: I cannot be held responsible for any system damage or data loss.
 # Use this script at your own risk!
 
-# sublimetext-install.sh written by Christian Heinrichs - 07/17/2019
+# sublimetext-install.sh written by Christian Heinrichs
+# Last modified on 14 January 2022
 
 # This script is based on the Sublime Text 2 documentation at:
 # https://sublime-text-unofficial-documentation.readthedocs.io/en/sublime-text-2/getting_started/install.html
+#
 # For the Sublime Text 3 part I referred to:
 # http://docs.sublimetext.info/en/latest/getting_started/install.html
 #
@@ -37,7 +39,7 @@
 
 read -p "Do you want to install/uninstall Sublime Text 2 or Sublime Text 3? Please enter either st2 or st3. " versiondecision
 
-# Sublime Text 2 uninstallation/installation dialog
+# Sublime Text 2 installation/uninstallation dialog
 if [[ $versiondecision == "st2" || $versiondecision == "ST2" ]]
     then
 
@@ -57,12 +59,14 @@ if [[ $versiondecision == "st2" || $versiondecision == "ST2" ]]
                         # Move the extracted folder to /opt/
                         printf "Moving Sublime Text 2 folder to /opt/\n"
                         sudo mv Sublime\ Text\ 2 /opt/
-                        # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
+                        # Create the symlink /usr/bin/sublime linked to
+                        # ‘/opt/Sublime Text 2’
                         printf "Creating Sublime Text 2 symlink\n"
                         sudo ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
                         # Write the sublime.desktop configuration file
                         printf "Writing sublime.desktop file\n"
-                        # Thanks to grawity for solving the sudo cat redirection problem here:
+                        # Thanks to grawity for solving the sudo cat redirection
+                        # problem here:
                         # https://superuser.com/questions/340074/bash-permission-denied-issue-when-trying-to-append-to-eof/340083#340083
                         sudo bash -c 'cat >> /usr/share/applications/sublime.desktop' <<EOF
 [Desktop Entry]
@@ -94,12 +98,14 @@ EOF
                         # Move the extracted folder to /opt/
                         printf "Moving Sublime Text 2 folder to /opt/\n"
                         sudo mv Sublime\ Text\ 2 /opt/
-                        # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
+                        # Create the symlink /usr/bin/sublime linked to
+                        # ‘/opt/Sublime Text 2’
                         printf "Creating Sublime Text 2 symlink\n"
                         sudo ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
                         # Write the sublime.desktop configuration file
                         printf "Writing sublime.desktop file\n"
-                        # Thanks to grawity for solving the sudo cat redirection problem here:
+                        # Thanks to grawity for solving the sudo cat redirection
+                        # problem here:
                         # https://superuser.com/questions/340074/bash-permission-denied-issue-when-trying-to-append-to-eof/340083#340083
                         sudo bash -c 'cat >> /usr/share/applications/sublime.desktop' <<EOF
 [Desktop Entry]
@@ -127,31 +133,33 @@ EOF
                 fi
         elif [[ $installdecision == "u" || $installdecision == "U" ]]
             then
-                # Delete the folder /opt/Sublime Text 2/
+                # Delete the folder ‘/opt/Sublime Text 2/’
                 printf "Deleting Sublime Text 2 folder\n"
                 sudo rm -fr /opt/Sublime\ Text\ 2/
                 # Unlink /usr/bin/sublime
                 printf "Removing Sublime Text 2 symlink\n"
                 sudo unlink /usr/bin/sublime
-                # Remove the .desktop file from the Unity menu
+                # Remove the .desktop file
                 printf "Deleting Sublime Text 2 menu association\n"
                 sudo rm /usr/share/applications/sublime.desktop
-                # Remove all packages and configuration files in the home directory
+                # Remove all packages and configuration files in the home
+                # directory
                 printf "Removing Sublime Text 2 package and configuration file in the home directory\n"
                 rm -fr $HOME/.config/sublime-text-2/
-                # Remove all packages and configuration files in the root directory
+                # Remove all packages and configuration files in the root
+                # directory
                 printf "Removing Sublime Text 2 package and configuration file in the root directory\n"
                 sudo rm -fr /root/.config/sublime-text-2/
 
-                # It's not clear if the following step is necessary.
-                # Maybe such an entry was made in old versions.
-                # Answer was given by WebbyIT here: http://askubuntu.com/questions/327747/how-to-remove-sublime-from-ubuntu-12-04/327752#327752
+                # It’s not clear to me if the following step is necessary. Maybe
+                # such an entry was made in old versions.
+                # Answer was given by WebbyIT here: https://askubuntu.com/questions/327747/how-to-remove-sublime-from-ubuntu-12-04/327752#327752
                 # sudo sed -i 's/sublime\.desktop/gedit.desktop/g' /usr/share/applications/defaults.list
         else
             printf "Please enter i, I, u or U. Restarting script!\n"
             bash sublimetext-install.sh
         fi
-# Sublime Text 3 uninstallation/installation dialog
+# Sublime Text 3 installation/uninstallation dialog
 elif [[ $versiondecision == "st3" || $versiondecision == "ST3" ]]
     then
         read -p "Do you want to [i]nstall or [u]ninstall Sublime Text 3? " installdecision
@@ -171,12 +179,14 @@ elif [[ $versiondecision == "st3" || $versiondecision == "ST3" ]]
                         # Move the extracted folder to /opt/
                         printf "Moving Sublime Text 3 folder to /opt/\n"
                         sudo mv sublime_text_3 /opt/
-                        # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
+                        # Create the symlink /usr/bin/sublime linked to
+                        # ‘/opt/Sublime Text 2’
                         printf "Creating Sublime Text 3 symlink\n"
                         sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime
                         # Write the sublime.desktop configuration file
                         printf "Writing sublime.desktop file\n"
-                        # Thanks to grawity for solving the sudo cat redirection problem here:
+                        # Thanks to grawity for solving the sudo cat redirection
+                        # problem here:
                         # https://superuser.com/questions/340074/bash-permission-denied-issue-when-trying-to-append-to-eof/340083#340083
                         sudo bash -c 'cat >> /usr/share/applications/sublime.desktop' <<EOF
 [Desktop Entry]
@@ -209,12 +219,14 @@ EOF
                         # Move the extracted folder to /opt/
                         printf "Moving Sublime Text 3 folder to /opt/\n"
                         sudo mv sublime_text_3 /opt/
-                        # Create the symlink /usr/bin/sublime linked to /opt/Sublime Text 2
+                        # Create the symlink /usr/bin/sublime linked to
+                        # ‘/opt/Sublime Text 2’
                         printf "Creating Sublime Text 3 symlink\n"
                         sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime
                         # Write the sublime.desktop configuration file
                         printf "Writing sublime.desktop file\n"
-                        # Thanks to grawity for solving the sudo cat redirection problem here:
+                        # Thanks to grawity for solving the sudo cat redirection
+                        # problem here:
                         # https://superuser.com/questions/340074/bash-permission-denied-issue-when-trying-to-append-to-eof/340083#340083
                         sudo bash -c 'cat >> /usr/share/applications/sublime.desktop' <<EOF
 [Desktop Entry]
@@ -248,18 +260,20 @@ EOF
                 # Unlink /usr/bin/sublime
                 printf "Removing Sublime Text 3 symlink\n"
                 sudo unlink /usr/bin/sublime
-                # Remove the .desktop file from the Unity menu
+                # Remove the .desktop file
                 printf "Deleting Sublime Text 3 menu association\n"
                 sudo rm /usr/share/applications/sublime.desktop
-                # Remove all packages and configuration files in the home directory
+                # Remove all packages and configuration files in the home
+                # directory
                 printf "Removing Sublime Text 3 package and configuration file in the home directory\n"
                 rm -fr $HOME/.config/sublime-text-3/
-                # Remove all packages and configuration files in the root directory
+                # Remove all packages and configuration files in the root
+                # directory
                 printf "Removing Sublime Text 3 package and configuration file in the root directory\n"
                 sudo rm -fr /root/.config/sublime-text-3/
 
-                # It's not clear if the following step is necessary. Maybe such
-                # an entry was made in old versions.
+                # It’s not clear to me if the following step is necessary. Maybe
+                # such an entry was made in old versions.
                 # Answer was given by WebbyIT here:
                 # https://askubuntu.com/questions/327747/how-to-remove-sublime-from-ubuntu-12-04/327752#327752
                 # sudo sed -i 's/sublime\.desktop/gedit.desktop/g' /usr/share/applications/defaults.list
