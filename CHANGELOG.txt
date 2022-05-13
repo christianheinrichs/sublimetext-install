@@ -46,3 +46,7 @@ Version 14.1.2022
 - Add license
 - Add readme files
 - Update comments
+
+Version 13.5.2022
+- Add licensing notice
+- Update README files
